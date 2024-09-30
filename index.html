@@ -11,20 +11,25 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
         }
 
         .bingo-container {
             text-align: center;
+            max-width: 100%; /* Ensure container doesn't overflow */
+            overflow-x: auto; /* Enable horizontal scrolling on small screens */
         }
 
         .bingo-card {
             display: grid;
-            grid-template-columns: repeat(5, 120px); /* Increase square size */
-            grid-template-rows: repeat(5, 120px);    /* Increase square size */
+            grid-template-columns: repeat(5, 1fr); /* Flexibly sized columns */
             gap: 10px;
             margin-top: 20px;
+            width: 100%;
+            max-width: 600px; /* Set a maximum width for larger screens */
         }
 
         .bingo-square {
@@ -39,7 +44,7 @@
             cursor: pointer;
             user-select: none;
             transition: background-color 0.2s ease;
-            padding: 10px; /* Add padding to prevent text collision */
+            padding: 10px;
             box-sizing: border-box;
         }
 
@@ -60,6 +65,18 @@
             margin-top: 30px;
             padding: 10px 20px;
             font-size: 16px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .bingo-card {
+                grid-template-columns: repeat(5, 1fr); /* Keep it 5x5, but shrink items */
+            }
+
+            .bingo-square {
+                font-size: 10px; /* Slightly smaller text on small screens */
+                padding: 8px; /* Adjust padding for smaller screens */
+            }
         }
     </style>
 </head>
@@ -97,7 +114,7 @@
             'Terrible powerpoint with too much text',
             '"Thank you so much for this paper. I really enjoyed it."',
             'uncomfortable laughing',
-            '"Who\'s the audience for this?"',
+            'Who\'s the audience for this?',
             '"I haven\'t read your paper, but"'
         ];
 
