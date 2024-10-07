@@ -102,20 +102,22 @@
             '"moderator\'s privilege"',
             '"quick follow up"',
             '"Thanks for that question"',
-            '"vis a ve the prior decisions"',
-            'a question is actually more than 2 questions',
+            '"vis-a-vis the prior decisions"',
+            'a question that is actually more than 2 questions',
             '"first amendment space"',
             '"I like your paper a lot, BUT"',
             '"I\'m not a [insert area] scholar, but…" ',
-            '"I’m not an expert, but make it apply to my research"',
+            '"I\'m not an expert, but make it apply to my research"',
             'moderator: "I have questions but I\'ll wait for others"',
             'normative question',
             'question that is really a statement',
             'Terrible powerpoint with too much text',
-            '"Thank you so much for this paper. I really enjoyed it."',
-            'uncomfortable laughing',
+            '"Thank you for this paper. I enjoyed it."',
+            'Awkward laughing',
             'Who\'s the audience for this?',
-            '"I haven\'t read your paper, but"'
+            '"I haven\'t read your paper, but"',
+            'IT issues',
+            'Faculty member asking a question to ask a question'
         ];
 
         function shuffleArray(array) {
@@ -135,7 +137,7 @@
                 const square = document.createElement("div");
                 square.className = 'bingo-square';
                 if (i === 12) {  // Middle space (free space)
-                    square.textContent = "Seth Chandler asks a question";
+                    square.textContent = '"That guy" asks a question';
                     square.classList.add("free");
                 } else {
                     square.textContent = shuffledItems.pop();
